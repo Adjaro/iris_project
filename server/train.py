@@ -10,7 +10,7 @@ scaler = StandardScaler()
 model = make_pipeline(scaler, DecisionTreeClassifier(random_state=42))
 
 # Charger le jeu de données Iris
-data = pd.read_csv("data/iris.csv")
+data = pd.read_csv("server/data/iris.csv")
 
 X = data.drop("label", axis=1)
 y = data["label"]
