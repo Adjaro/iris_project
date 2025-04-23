@@ -19,4 +19,3 @@ model.fit(X, y)
 # Sauvegarder le modèle entraîné dans un fichier .pkl
 with open("model/model.pkl", "wb") as f:
     pickle.dump(model, f)
-
