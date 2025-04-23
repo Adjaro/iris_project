@@ -1,6 +1,6 @@
 install:
 	pip install --upgrade pip &&\
-		pip install -r /server/requirements.txt
+		pip install -r server/requirements.txt
 
 format:	
 	black server/*.py 
