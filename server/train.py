@@ -21,6 +21,11 @@ model.fit(X, y)
 #creer le  dossier model si il n'existe pas
 if not os.path.exists("model"):
     os.makedirs("model")
+
 # Sauvegarder le modèle entraîné dans un fichier .pkl
-with open("model/model.pkl", "wb") as f:
+with open("./model.pkl", "wb") as f:
+    pickle.dump(model, f)
+
+# Sauvegarder le modèle entraîné dans un fichier .pkl
+with open("./model/model.pkl", "wb") as f:
     pickle.dump(model, f)
