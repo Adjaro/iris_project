@@ -1,12 +1,12 @@
 install:
 	pip install --upgrade pip &&\
-		pip install -r server/requirements.txt
+		pip install -r ./server/requirements.txt
 
 format:	
-	black server/*.py 
+	black ./server/*.py 
 
 train:
-	python server/train.py
+	python ./server/train.py
 
 eval:
 	echo "## Model Metrics" > report.md
