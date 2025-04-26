@@ -2,7 +2,7 @@ print("Training the model...")
 
 # creer un  fichier  et  enregistrer  un "a" dedans
 with open("model.txt", "w") as f:
-    f.write("a")
+    f.write("aB")
 
 # from sklearn.tree import DecisionTreeClassifier
 # import pandas as pd
