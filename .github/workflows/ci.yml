@@ -22,10 +22,10 @@ jobs:
       # - name: Evaluation
       #   env:
       #     REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        # run: make eval
+      #   run: make eval
+      - name: Configure Git
+        run: |
+          git config --global user.name "Adjaro"
+          git config --global user.email "adjaropatoussi@gmail.com"
       - name: Update Branch
-        env:
-          NAME: ${{ secrets.USER_NAME }}
-          EMAIL: ${{ secrets.USER_EMAIL }}
-          # EMAIL: agblajack@gmail.com
-        run: make update-branch USER_NAME=$NAME USER_EMAIL=$EMAIL
+        run: make update-branch USER_NAME="Adjaro" USER_EMAIL="adjaropatoussi@gmail.com"
