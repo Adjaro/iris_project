@@ -9,7 +9,7 @@ train:
 	@echo "Starting model training..."
 	mkdir -p ./Results
 	touch ./Results/metrics.txt
-	python ./server/train.py
+	python ./server/utils/train.py
 	@echo "Training completed successfully."
 
 eval:
