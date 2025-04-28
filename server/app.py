@@ -17,25 +17,24 @@ except Exception as e:
     print(f"Erreur lors du chargement du modèle: {e}")
     model = None
 
+
 class InputData(BaseModel):
     sepal_length: float
     sepal_width: float
     petal_length: float
     petal_width: float
 
+
 @app.post("/predict")
 def predict(data: InputData):
     if model is None:
         return {"error": "Le modèle n'est pas chargé"}
-    
+
     # Conversion des données d'entrée en array
-    input_data = np.array([[
-        data.sepal_length,
-        data.sepal_width,
-        data.petal_length,
-        data.petal_width
-    ]])
-    
+    input_data = np.array(
+        [[data.sepal_length, data.sepal_width, data.petal_length, data.petal_width]]
+    )
+
     try:
         prediction = model.predict(input_data)
         # probabilities = model.predict_proba(input_data)
@@ -43,7 +42,7 @@ def predict(data: InputData):
         probabilities = probabilities[:, 1]  # Probabilité de la classe positive
         return {
             "prediction": prediction.tolist()[0],
-            "probabilities": probabilities.tolist()[0]
+            "probabilities": probabilities.tolist()[0],
         }
     except Exception as e:
         return {"error": f"Erreur lors de la prédiction: {str(e)}"}
