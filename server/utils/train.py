@@ -7,7 +7,7 @@ from   sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
 model = make_pipeline(scaler, DecisionTreeClassifier(random_state=42))
 
-data = pd.read_csv("./server/utlis/iris.csv")
+data = pd.read_csv("./server/utils/iris.csv")
 
 X = data.drop("label", axis=1)
 y = data["label"]
